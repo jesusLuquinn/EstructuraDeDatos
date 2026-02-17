@@ -1,12 +1,20 @@
+import java.util.Scanner;
+
 public class metodosRecursivos {
 
     public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+         System.out.print("Ingrese la posicion de la sucesion Fibonacci: ");
+        int posicion = sc.nextInt(); 
         int  n = 5;
         int e = 2;
         System.out.println(Suma(n));
         System.out.println(Factorial(n));
         System.out.println(Potenciacion(n, e));
-        System.out.println(Fibonacci(n));
+        System.out.println("El valor en la posicion " + posicion + " es: " + Fibonacci(posicion));
+
+
+        sc.close();
     }
 
     public static int Suma(int n){
@@ -46,4 +54,6 @@ public class metodosRecursivos {
             return Fibonacci(n - 1) + Fibonacci(n - 2);
         }
     }
+
+
 }
