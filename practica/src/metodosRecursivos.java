@@ -4,14 +4,36 @@ public class metodosRecursivos {
 
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-         System.out.print("Ingrese la posicion de la sucesion Fibonacci: ");
-        int posicion = sc.nextInt(); 
-        int  n = 5;
+        int n = 5;
         int e = 2;
+        int n1 = 3;
+        int n2 = 3;
+        int  [] array= {1, 2, 3, 4, 5};
+
+        System.out.print("Ingrese la posicion de la sucesion Fibonacci: ");
+        int posicion = sc.nextInt(); 
+        System.out.print("Ingrese un numero a comprobar si es par: ");
+        int numero = sc.nextInt();
+
+
         System.out.println(Suma(n));
+
         System.out.println(Factorial(n));
+
         System.out.println(Potenciacion(n, e));
+
         System.out.println("El valor en la posicion " + posicion + " es: " + Fibonacci(posicion));
+
+        System.out.println(Multiplicacion(n1, n2));
+
+        System.out.println("La suma del arreglo es: "+ sumaArreglo(array, array.length));
+
+        if(esPar(numero) == true){
+            System.out.println("El numero proporcionado es par");
+        }
+        else{
+            System.out.println("El numero proporciona es impar");
+        }
 
 
         sc.close();
@@ -43,9 +65,9 @@ public class metodosRecursivos {
         else{
             return n *= Potenciacion(n, e-1);
         }
-    }
 
-    public static int Fibonacci(int n) {
+    }
+    public static int Fibonacci(int n){ 
         if (n == 0) {
             return 0;
         } else if (n == 1) {
@@ -54,6 +76,47 @@ public class metodosRecursivos {
             return Fibonacci(n - 1) + Fibonacci(n - 2);
         }
     }
+
+    public static int Multiplicacion(int n, int e){
+        if(e == 0){
+            return 0;
+        }
+        else{
+            return n+= Multiplicacion(n, e-1);
+        }
+    }
+
+    public static int sumaArreglo(int [] arreglo, int n){
+        if(n == 0){
+            return 0;
+        }
+        else{
+            return arreglo[n-1] + sumaArreglo(arreglo, n-1);
+        }
+
+    }
+
+    public static boolean esPar(int n){
+        if(n == 0){
+            return true;
+        }
+        if(n == 1){
+            return false;
+        }else
+            {
+            return esPar(n - 2);
+        }
+
+    }
+
+    public static boolean esPalindromo(String palabra){
+        return true;
+    }
+
+    public static int Elemento(){
+        return 0;
+    }
+
 
 
 }
