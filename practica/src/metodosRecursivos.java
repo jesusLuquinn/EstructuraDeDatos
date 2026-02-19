@@ -10,10 +10,12 @@ public class metodosRecursivos {
         int n2 = 3;
         int  [] array= {1, 2, 3, 4, 5};
 
-        System.out.print("Ingrese la posicion de la sucesion Fibonacci: ");
-        int posicion = sc.nextInt(); 
-        System.out.print("Ingrese un numero a comprobar si es par: ");
+        System.out.println("Ingrese la posicion de la sucesion Fibonacci: ");
+        int posicion = sc.nextInt();
+        System.out.println("Ingrese un numero: ");
         int numero = sc.nextInt();
+        System.out.println("Ingrese una palabra: ");
+        String palabra = sc.next();
 
 
         System.out.println(Suma(n));
@@ -33,6 +35,12 @@ public class metodosRecursivos {
         }
         else{
             System.out.println("El numero proporciona es impar");
+        }
+
+        if(esPalindromo(palabra)==false){
+            System.out.println("La palabra proporcionda no es palindromo");
+        }else{
+            System.out.println("La palabra proporcionada es palindromo");
         }
 
 
@@ -110,7 +118,14 @@ public class metodosRecursivos {
     }
 
     public static boolean esPalindromo(String palabra){
-        return true;
+        if(palabra.length()<=1){
+            return true;
+        }
+        if(palabra.charAt(0) != palabra.charAt(palabra.length()-1)){
+            return false;
+        }
+        return esPalindromo(palabra.substring(1, palabra.length()-1));
+
     }
 
     public static int Elemento(){
