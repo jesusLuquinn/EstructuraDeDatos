@@ -9,6 +9,7 @@ public class metodosRecursivos {
         int n1 = 3;
         int n2 = 3;
         int  [] array= {1, 2, 3, 4, 5};
+        int indice = 0;
 
         System.out.println("Ingrese la posicion de la sucesion Fibonacci: ");
         int posicion = sc.nextInt();
@@ -18,15 +19,15 @@ public class metodosRecursivos {
         String palabra = sc.next();
 
 
-        System.out.println(Suma(n));
+        System.out.println("Suma Arreglo Metodo: " + Suma(n));
 
-        System.out.println(Factorial(n));
+        System.out.println("Factorial Metodo: "+Factorial(n));
 
-        System.out.println(Potenciacion(n, e));
+        System.out.println("Potenciacion Metodo: "+Potenciacion(n, e));
 
         System.out.println("El valor en la posicion " + posicion + " es: " + Fibonacci(posicion));
 
-        System.out.println(Multiplicacion(n1, n2));
+        System.out.println("Mulriplicacion metodo: " + Multiplicacion(n1, n2));
 
         System.out.println("La suma del arreglo es: "+ sumaArreglo(array, array.length));
 
@@ -42,6 +43,14 @@ public class metodosRecursivos {
         }else{
             System.out.println("La palabra proporcionada es palindromo");
         }
+
+        if(buscarElemento(array, indice, numero)>0){
+            System.out.println("El numero proporcionado: "+numero+". Se encuentra en la posicion "+buscarElemento(array, indice, numero)+" del arreglo.");
+        }else{
+            System.out.println("El numero proporcionado no se encuentra en el arreglo");
+        }
+
+        
 
 
         sc.close();
@@ -128,8 +137,17 @@ public class metodosRecursivos {
 
     }
 
-    public static int Elemento(){
-        return 0;
+    public static int buscarElemento(int [] numeros, int i, int n){
+        if(i >= numeros.length){
+            return -1;
+        }
+        if(numeros[i]==n){
+            return i;
+
+        }else{
+            return buscarElemento(numeros, i+1, n );
+        }
+     
     }
 
 
