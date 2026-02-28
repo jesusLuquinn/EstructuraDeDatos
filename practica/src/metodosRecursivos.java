@@ -29,7 +29,7 @@ public class metodosRecursivos {
 
         System.out.println("El valor en la posicion " + posicion + " es: " + Fibonacci(posicion));
 
-        System.out.println("Mulriplicacion metodo: " + Multiplicacion(n1, n2));
+        System.out.println("Multiplicacion metodo: " + Multiplicacion(n1, n2));
 
         System.out.println("La suma del arreglo es: "+ sumaArreglo(array, array.length));
 
